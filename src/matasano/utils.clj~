@@ -1,0 +1,9 @@
+(ns matasano.utils
+  (:import (org.apache.commons.codec.binary Base64 Hex)))
+
+
+(defn encodeBase64 [hexstring]
+  (-> (.toCharArray hexstring)
+      Hex/decodeHex
+      Base64/encodeBase64String)
+  )
